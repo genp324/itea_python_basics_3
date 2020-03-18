@@ -2,24 +2,25 @@ MAX_ANSWERS = 10
 MAX_VISITORS = 3
 
 is_opened = True
+
 answers = 0
 visitors = 0
 
 
 while is_opened:
-
+    
     if answers >= MAX_ANSWERS:
         is_opened = False
-
+        
     if visitors >= MAX_VISITORS:
         break
 
     answers += 1
-
+    
     car = input('What is your car? ')
-
+    
     if car != 'BMW':
-
+        
         print('Sorry, you are not allowed')
         continue
     
