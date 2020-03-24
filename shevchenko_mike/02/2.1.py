@@ -59,7 +59,7 @@ output: True
 print("approach_4")
 print('')
 
-chars_4 = ('ozpzpzpp')
+chars_4 = ('zpzpzpp')
 print('We have - ', len(chars_4),  'symbols')
 print('symbol - "o" -', chars_4.count('o'))
 print('symbol - "x" -', chars_4.count('x'))
@@ -67,11 +67,16 @@ print('symbol - "z" -', chars_4.count('z'))
 print('symbol - "p" -', chars_4.count('p'))
 
 
+line_1 = int(input('enter a string: for example "zpzpzpp"'))
+print(True)
+
 if chars_4 == chars_2.count('o'):
     if chars_4 != {'x'}:
         print ('Kolobok')
-    print(True)
-    print('')
+
+
+print(True)
+print('')
 
 
 """
