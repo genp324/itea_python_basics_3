@@ -1,6 +1,6 @@
 #text = list(input('Input string to reverse: '))
 
-text=list('Hello')
+text = list('Hello')
 
 print('\nFirst example ')
 
@@ -32,10 +32,3 @@ for letter in new_text:
 txt = "Hello World"[::-1]
 print(txt)
 '''
-
-
-
-
-    
-
-

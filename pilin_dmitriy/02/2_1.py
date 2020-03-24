@@ -27,4 +27,3 @@ check_o = [text_str for text_str in text_str if text_str == 'o' or text_str == '
 check_x = [text_str for text_str in text_str if text_str == 'x' or text_str == 'x']
 
 print(len(check_o) == len(check_x))
-
