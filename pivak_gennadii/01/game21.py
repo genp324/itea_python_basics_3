@@ -9,9 +9,9 @@ count_player = 0
 more = 'y'
 is_play = True
 
-count_player  = int(input('How many player will be (may be from 1 to 3) - '))
+count_player = int(input('How many player will be (may be from 1 to 3) - '))
 # First round
-while  is_play:
+while True:
     card_player1 = 0
     card_player2 = 0
     card_player3 = 0
@@ -22,10 +22,10 @@ while  is_play:
     bet_bank = 0
     next_round = 0
 
-    if  count_player == 1:
+    if count_player == 1:
         bet_player1 = int(input(f'Player {count_player} your bet - '))
-        card_player1 = randint(2,11)
-        card_bank = randint(2,11)
+        card_player1 = randint(2, 11)
+        card_bank = randint(2, 11)
         print(f'Player1 your card is - {card_player1}')
         print(f'Bank your card is - {card_bank}')
     # Second and more cards
@@ -68,7 +68,7 @@ while  is_play:
                 while more == 'y':
                     card_bank += randint(2, 11)
                     print(f'Bank have - {card_bank}')
-                    if card_bank > 16 and card_bank < 21:
+                    if 16 < card_bank < 21:
                         break
                     if card_bank > 21:
                         print(f'Bank have - {card_bank} and loose {bet_player1} $')
@@ -100,6 +100,6 @@ while  is_play:
     next_round = 0
     more = input('Next round y/n? ')
     if more != 'y':
-        is_play = False
-print ('Bay')
-print (f'See score: bank have {money_bank} $, player have {money_player1} $')
+        break
+print('Bye')
+print(f'See score: bank have {money_bank} $, player have {money_player1} $')
