@@ -1,10 +1,11 @@
 from random import randint
 
-level_check=True
+
+level_check = True
 
 while level_check:
 
-    LEVEL=int(input('Welcome to \"Game 21\"\nChose your level: (1 - single player; 2 - with one bot; 3 - with two bots)\n'))
+    LEVEL = int(input('Welcome to \"Game 21\"\nChose your level: (1 - single player; 2 - with one bot; 3 - with two bots)\n'))
 
     if (1 <= LEVEL <= 3 ):
 
@@ -16,18 +17,18 @@ while level_check:
 
 if LEVEL >= 1:
     
-    card_1_deal=randint(2,11)
+    card_1_deal = randint(2,11)
  
-    card_2_deal=randint(2,11)
+    card_2_deal = randint(2,11)
  
-    player_ace_win=False
+    player_ace_win = False
  
     player_win = False
  
     if card_1_deal == 11 and card_2_deal == 11:
  
         print ('Winner. You got 2 aces')
-        player_ace_win=True
+        player_ace_win = True
         player_deal = 21
  
     else :
@@ -38,7 +39,7 @@ if LEVEL >= 1:
         if player_deal == 21:
  
             print ('Congradulations. You got 21')
-            player_win=True
+            player_win = True
  
     while player_deal <= 20:
  
@@ -57,7 +58,7 @@ if LEVEL >= 1:
  
             if player_deal == 21:
  
-                player_win=True
+                player_win = True
                 
             elif player_deal > 21:
  
@@ -125,8 +126,8 @@ if LEVEL >= 2 and player_win == False and player_ace_win==False:
 if LEVEL == 3 and player_win == False and bot1_win == False and player_ace_win==False and bot1_ace_win == False:
 
     print ('---Let\'s play with Bot 2---')
-    card_1_deal=randint(2,11)
-    card_2_deal=randint(2,11)
+    card_1_deal = randint(2,11)
+    card_2_deal = randint(2,11)
     bot2_ace_win = False
     bot1_win = False
 
@@ -134,7 +135,7 @@ if LEVEL == 3 and player_win == False and bot1_win == False and player_ace_win==
 
         print ('Winner. You got 2 aces')
         bot2_ace_win = True
-        bot2_deal =21
+        bot2_deal = 21
 
     else:
 
@@ -149,7 +150,7 @@ if LEVEL == 3 and player_win == False and bot1_win == False and player_ace_win==
 
 # draw more cards
 
-        while bot2_deal <=21:
+        while bot2_deal <= 21:
 
             risky_deal = randint(0,1)
 
