@@ -53,10 +53,3 @@ bigger_than_zero = list(simple_filter(lambda x: x > 0, range(-5, 5)))
 print(bigger_than_zero)
 
 print("-----------")
-
-
-
-
-
-
-

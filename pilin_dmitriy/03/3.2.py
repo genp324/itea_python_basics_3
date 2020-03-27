@@ -36,5 +36,3 @@ print (result)
 
 result = simple_map(lambda sum: sum + b + c, list_seq)
 print (result)
-
-
