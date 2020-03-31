@@ -55,7 +55,7 @@ def unique_words(text):
     :return: return list of unique words occurring in the text
     :rtype: return dict
     """
-    dict_with_quantity={}
+    dict_with_quantity = {}
 
     for i in text:
         dict_with_quantity[i] = text.count(i)
@@ -83,12 +83,12 @@ def frequency(dict_list):
     :return: return list frequency of words in percents in the text
     :rtype: return dict
     """    
-    percent_list={}
+    percent_list = {}
 
     for key, value in dict_list.items():
 
         math = value*100/unique
-        percent_list[key] =math
+        percent_list[key] = math
 
     return percent_list
 
@@ -104,15 +104,15 @@ print(f'unique words quantity: {unique}')
 
 sorted_dict = frequent_words(unique_words(txt))
 
-print('keywords: ', end='')
+print('keywords: ', end = '')
 
 for i in range(3):
-    print(f'{sorted_dict[i][0]} - {sorted_dict[i][1]}, ', end='')
+    print(f'{sorted_dict[i][0]} - {sorted_dict[i][1]}, ', end = '')
 
 print('\n')
 
 frequency_list = frequency(unique_words(txt))
-print ('frequency: ', end='')
+print ('frequency: ', end = '')
 
 for key, value in frequency_list.items():
-    print(f'{key} : %.1f'% value ,  end='% ')
+    print(f'{key} : %.1f'% value ,  end = '% ')
