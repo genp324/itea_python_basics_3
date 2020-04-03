@@ -48,12 +48,12 @@ def clear_file(write_filename):
     :type arg1: str
     :return: clear file 
     """ 
-        try:
-            with open(write_filename, 'w') as write_txt_file:
-                print('File is cleared')
+    try:
+        with open(write_filename, 'w') as write_txt_file:
+            print('File is cleared')
 
-        except TypeError as Error:
-            raise TypeError(Error)
-        
-        except PermissionError:
-            raise PermissionError(' Permission denied. Check file permissions for ' + write_filename)
+    except TypeError as Error:
+        raise TypeError(Error)
+
+    except PermissionError:
+        raise PermissionError(' Permission denied. Check file permissions for ' + write_filename)
