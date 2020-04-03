@@ -175,7 +175,3 @@ if __name__ == '__main__':
         print(error)
     except TypeError as error:
         print(error)
-
-
-
-
