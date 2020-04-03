@@ -45,6 +45,7 @@ def pretify(text):
 
 
 def count_words(text):
+    print(text)
     return (len(text))
     
 
@@ -63,7 +64,7 @@ def unique_words(text):
     return dict_with_quantity
 
 
-def  frequent_words(dict_list):
+def frequent_words(dict_list):
     """
     :param arg1: dict
     :type arg1: dict
@@ -87,7 +88,7 @@ def frequency(dict_list):
 
     for key, value in dict_list.items():
 
-        math = value*100/unique
+        math = value * 100 / unique
         percent_list[key] = math
 
     return percent_list
@@ -115,4 +116,4 @@ frequency_list = frequency(unique_words(txt))
 print ('frequency: ', end = '')
 
 for key, value in frequency_list.items():
-    print(f'{key} : %.1f'% value ,  end = '% ')
+    print(f'{key}:%.3f'% value ,  end = ' %  ')
