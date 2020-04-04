@@ -1,5 +1,7 @@
 from random import randint, choice
 from characters import CHARACTERS, ENEMIES
+from game_objects import GAME_OBJECTS
+from game_map import GameMap
 
 
 def get_trapped(character):
@@ -39,17 +41,24 @@ race = input('Choose race [Human, Orc, Elf]: ')
 level = input('Difficulty [Hard, Medium, Easy]: ')
 
 if level == 'Hard':
-    situations = ['trap', 'trap', 'trap', 'enemy', 'enemy', 'heal']
+    objects = [choice(GAME_OBJECTS)() for i in range(4)]
+    enemies = [choice(ENEMIES)() for i in range(3)]
+    objects += enemies
 elif level == 'Medium':
-    situations = ['trap', 'trap', 'enemy', 'heal']
+    objects = ['trap', 'trap', 'enemy', 'heal']
 elif level == 'Easy':
-    situations = ['trap', 'enemy', 'heal', 'heal']
+    objects = ['trap', 'enemy', 'heal', 'heal']
 
-char = CHARACTERS[race](name)
+x, y = randint(0, 4), randint(0, 4)
+char = CHARACTERS[race](name, x, y)
 char.show_stats()
+
+game_map = GameMap(5, 5, objects)
+game_map.put_char(char, *char.get_coords())
 
 while True:
 
+    print(game_map)
     input('Move? ')
     situation = choice(situations)
 

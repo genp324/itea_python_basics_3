@@ -2,17 +2,26 @@ class Character:
 
     _initial_hp = 100
 
-    def __init__(self, name):
+    def __init__(self, name, x, y):
 
         self._name = name
+        self._x = x
+        self._y = y
         self._assign_stats()
         self._is_dead = False
+
+    def __str__(self):
+        return 'X'
 
     def _assign_stats(self): 
     
         self._hp = 100
         self._damage = 10
         self._race = None
+
+    def get_coords(self):
+
+        return self._x, self._y
 
     def show_stats(self):
 
@@ -104,6 +113,9 @@ class Enemy(Character):
         self._assign_stats()
         self.show_stats()
         self._is_dead = False
+
+    def __str__(self):
+        return '1'
 
     def _assign_stats(self): 
     
