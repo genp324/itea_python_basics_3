@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from random import randint
 
 
@@ -24,6 +25,15 @@ class GameMap:
 
     def put_char(self, char, x, y):
         self._map[x][y] = str(char)
+=======
+class GameMap:
+
+    def __init__(self, n, m):
+
+        self.n = n
+        self.m = m
+        self._generate_map()
+>>>>>>> Added files 06
 
     def _generate_map(self):
 
@@ -31,13 +41,14 @@ class GameMap:
 
         for i in range(self._n):
             row = []
+<<<<<<< HEAD
             
             for i in range(self._m):
                 row.append(' ')
                 
-            game_map.append(row)
-
-        return game_map
+=======
+            for i in range(self_m):
+                row.append(' ')
 
     def _show_map(self):
 
@@ -62,3 +73,4 @@ if __name__ == '__main__':
 
     game_map = GameMap(5, 5)
     print(game_map)
+
