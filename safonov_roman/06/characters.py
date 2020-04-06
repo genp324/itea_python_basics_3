@@ -32,7 +32,7 @@ class Character:
         
     def show_stats(self):
 
-        print('Character stats: ')
+        print('\nCharacter stats: ')
         print(f'Name: {self._name}')
         print(f'Race: {self._race}')
         print(f'HP: {self._hp}')
@@ -115,7 +115,7 @@ class Enemy(Character):
     def __init__(self):
         
         self._assign_stats()
-        self.show_enemy_stats()
+        self.show_stats()
         self._is_dead = False
 
     def __str__(self):
@@ -126,14 +126,9 @@ class Enemy(Character):
         self._hp = 100
         self._damage = 10
         self._name = None
-
-    def show_enemy_stats(self):
-
-        print('Enemy stats: ')
-        print(f'HP: {self._hp}')
-        print(f'Damage: {self._damage}')
-        print(f'Type: {self._name}')
-
+    
+    def show_stats(self):
+        pass
 
     def get_coords(self, x, y):
         self._x = x
@@ -155,7 +150,6 @@ class Undead(Enemy):
         self._name = 'Undead'
 
 
-
 class Murloc(Enemy):
 
     _initial_hp = 15
@@ -166,12 +160,6 @@ class Murloc(Enemy):
         self._damage = 5
         self._name = 'Murloc'
 
-    def show_stats(self):
-
-        print(f'Enemy stats: ')
-        print(f'HP: {self._hp}')
-        print(f'Damage: {self._damage}')
-        print(f'Name: {self._name}')
 
 CHARACTERS = {'Human': Human, 'Orc': Orc, 'Elf': Elf}
 ENEMIES = [Undead, Murloc]

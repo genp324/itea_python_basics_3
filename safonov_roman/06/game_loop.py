@@ -13,7 +13,7 @@ def get_trapped(character):
 
 def get_healed(character):
 
-    print('\nYou got healed')
+    print('\nYou found magic potion')
     hp = randint(5, 25)
     character.get_healed(hp)
 
