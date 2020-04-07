@@ -19,10 +19,16 @@ class GameMap:
 
 
     def _put_objects(self, objects):
-
+        """
+        :param arg1: self 
+        :param arg2: list of objects
+        :type arg1: self
+        :type arg2: list
+        :return: put exit door, generates objects coords with duplicate check and append to list. Then put objects on map
+        """  
         coord_list = []
         self._put_exit_door()
-        
+
         for obj in objects:
 
             x = randint(1, self._n - 1)
@@ -46,7 +52,11 @@ class GameMap:
 
 
     def _put_exit_door(self):
-
+        """
+        :param arg1: self 
+        :type arg1: self
+        :return: generate coords exit door and call move.coords to append to coord list
+        """ 
         x = randint(1, self._n - 1)
         y = randint(1, self._m - 1)
 
@@ -56,8 +66,19 @@ class GameMap:
     def put_char(self, char, x, y):
         self._map[x][y] = str(char)
 
+
     def clear_step(self, x, y):
+        """
+        :param arg1: self 
+        :param arg2: x coord 
+        :param arg3: y coord 
+        :type arg1: self
+        :type arg2: int
+        :type arg3: int
+        :return: add space in map object 
+        """ 
         self._map[x][y] = ' '
+
 
     def _generate_map(self):
 

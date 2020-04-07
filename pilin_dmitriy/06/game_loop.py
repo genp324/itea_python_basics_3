@@ -50,6 +50,7 @@ cave_x = 8
 cave_y = 8
 
 if level == 'Hard':
+
     objects = [choice(GAME_OBJECTS)() for i in range(6)]
     enemies = [choice(ENEMIES)() for i in range(15)]
     
@@ -57,6 +58,7 @@ if level == 'Hard':
 
      
 elif level == 'Medium':
+
     objects = [choice(GAME_OBJECTS)() for i in range(4)]
     enemies = [choice(ENEMIES)() for i in range(6)]
 
@@ -64,6 +66,7 @@ elif level == 'Medium':
 
 
 elif level == 'Easy':
+
     objects = [choice(GAME_OBJECTS)() for i in range(7)]
     enemies = [choice(ENEMIES)() for i in range(4)]
 
@@ -77,8 +80,6 @@ player_x,player_y = char.get_coords()
 
 game_map = GameMap(cave_x, cave_y, objects)
 game_map.put_char(char, *char.get_coords())
-
-
 
 print(f'Traps: {move.traps_list}')
 print(f'Enemy: {move.enemy_list}')
@@ -105,8 +106,7 @@ while True:
 
         if char.is_dead():
 
-            print('Sorry, you lost.')
-            print('Game Over')
+            print('Sorry, you lost.\nGame Over')
             break
         
     elif situation == 'heal':
@@ -120,8 +120,7 @@ while True:
 
         if not is_won:
 
-            print('Sorry, you lost.')
-            print('Game Over')
+            print('Sorry, you lost.\nGame Over')
             break
 
     elif situation == 'exit':

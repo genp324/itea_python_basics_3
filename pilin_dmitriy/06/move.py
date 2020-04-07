@@ -1,13 +1,21 @@
 traps_list = []
 enemy_list = []
 heal_list = []
-check_list = []
+# check_list = []
 exit_list = []
 
 _KEYS = ('w','a','s','d')
 
 def coords(obj,x,y):
-
+    """
+    :param arg1: objects 
+    :param arg2: x position
+    :param arg3: y position
+    :type arg1: obj
+    :type arg2: int
+    :type arg3: int
+    :return: fill lists of coords
+    """  
     if str(obj) == 'Trap':
         traps_list.append([x, y])
         
@@ -22,7 +30,13 @@ def coords(obj,x,y):
 
 
 def situations(x,y):
-
+    """
+    :param arg1: x position
+    :param arg1: y position
+    :type arg1: int
+    :type arg1: int
+    :return: returns corrent situation when player coords is in list 
+    """  
     if [x, y] in traps_list:
         traps_list.remove([x,y])
 
@@ -43,7 +57,18 @@ def situations(x,y):
 
 
 def steps(step, x, y, cave_x, cave_y):
-
+    """
+    :param arg1: current pressed button 
+    :param arg2: x position
+    :param arg3: x position
+    :param arg4: max x map value
+    :param arg4: max y map value
+    :type arg1: str
+    :type arg2: int
+    :type arg3: int
+    :type arg4: int
+    :return: change current player coordinates depending on the pressed key  
+    """  
     if step not in _KEYS:
         print('Enter correct key!')
     
@@ -58,12 +83,6 @@ def steps(step, x, y, cave_x, cave_y):
 
     elif step == 'd' and y < cave_y  :
         y += 1
-
-
-
-
-
-
 
     else:
         print('You kiss a Wall!')
