@@ -3,12 +3,12 @@ from random import randint
 
 class GameMap:
 
-    def __init__(self, n, m, objects):
+    def __init__(self, n, m, objects=None):
 
-        self._n = n
-        self._m = m
+        self._n = 8
+        self._m = 8
         self._map = self._generate_map()
-        self._put_objects(objects)
+        # self._put_objects(objects)
 
     def __str__(self):
 
@@ -43,17 +43,19 @@ class GameMap:
 
         game_map = []
 
-        for row in self._map:
+        game_map.append('    A B C D E F G H\n\n')
+
+        for index, row in enumerate(self._map):
             
-            game_map.append('|')
+            game_map.append(f'{index + 1}  |')
             
             for i in row:
 
                 game_map.append(f'{i}|')
 
-            game_map.append('\n')
+            game_map.append(f'  {index + 1}\n')
 
-        game_map.pop()
+        game_map.append('\n    A B C D E F G H')
 
         return ''.join(game_map)
 
